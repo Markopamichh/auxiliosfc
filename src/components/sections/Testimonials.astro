@@ -1,0 +1,39 @@
+---
+import { TESTIMONIALS } from "@/config/testimonials";
+import TestimonialCard from "@/components/ui/TestimonialCard.astro";
+---
+
+<section id="testimonios" class="section bg-white">
+  <div class="container-custom">
+    <h2 class="section-title">
+      Lo que dicen nuestros clientes
+    </h2>
+    <p class="section-subtitle">
+      La satisfacción de nuestros clientes es nuestra mejor carta de presentación
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {TESTIMONIALS.map(testimonial => (
+        <TestimonialCard
+          name={testimonial.name}
+          location={testimonial.location}
+          rating={testimonial.rating}
+          text={testimonial.text}
+        />
+      ))}
+    </div>
+
+    <!-- Trust Section -->
+    <div class="mt-16 text-center bg-primary/10 rounded-2xl p-8">
+      <h3 class="text-2xl font-display font-bold mb-4 text-secondary">
+        ¿Necesitás un servicio confiable?
+      </h3>
+      <p class="text-lg text-secondary-lighter mb-6 max-w-2xl mx-auto">
+        Sumá tu testimonio a nuestra lista de clientes satisfechos. Contactanos ahora y experimentá el mejor servicio de auxilio mecánico en Neuquén.
+      </p>
+      <a href="#contacto" class="btn-primary inline-block">
+        Contactar Ahora
+      </a>
+    </div>
+  </div>
+</section>

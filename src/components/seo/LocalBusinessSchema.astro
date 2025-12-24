@@ -1,0 +1,163 @@
+---
+import { SITE_CONFIG } from "@/config/site";
+import { TESTIMONIALS } from "@/config/testimonials";
+
+// Calculate aggregate rating from testimonials
+const totalRating = TESTIMONIALS.reduce((sum, t) => sum + t.rating, 0);
+const averageRating = (totalRating / TESTIMONIALS.length).toFixed(1);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "AutoRepair"],
+  "@id": SITE_CONFIG.url,
+  "name": SITE_CONFIG.name,
+  "description": SITE_CONFIG.description,
+  "url": SITE_CONFIG.url,
+  "telephone": SITE_CONFIG.contact.phone,
+  "email": SITE_CONFIG.contact.email,
+  "image": `${SITE_CONFIG.url}/images/fiveicon.png`,
+  "logo": `${SITE_CONFIG.url}/images/fiveicon.png`,
+  "priceRange": "$$",
+
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": SITE_CONFIG.business.address.street,
+    "addressLocality": SITE_CONFIG.business.address.city,
+    "addressRegion": SITE_CONFIG.business.address.state,
+    "postalCode": SITE_CONFIG.business.address.zipCode,
+    "addressCountry": "AR"
+  },
+
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": SITE_CONFIG.business.coordinates.lat,
+    "longitude": SITE_CONFIG.business.coordinates.lng
+  },
+
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Neuquén",
+      "containedIn": {
+        "@type": "State",
+        "name": "Neuquén"
+      }
+    },
+    {
+      "@type": "Country",
+      "name": "Argentina"
+    }
+  ],
+
+  "geo": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": SITE_CONFIG.business.coordinates.lat,
+      "longitude": SITE_CONFIG.business.coordinates.lng
+    },
+    "geoRadius": "50000" // 50km radius
+  },
+
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": averageRating,
+    "reviewCount": TESTIMONIALS.length,
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+
+  "review": TESTIMONIALS.map(testimonial => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": testimonial.name
+    },
+    "datePublished": testimonial.date,
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": testimonial.rating,
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": testimonial.text
+  })),
+
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Grúas y Auxilio Mecánico",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Servicio de Grúas",
+          "description": "Traslado de vehículos livianos, semipesados y pesados"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Auxilio Mecánico",
+          "description": "Asistencia en ruta 24 horas"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Traslado de Motos",
+          "description": "Servicio especializado en motocicletas"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Puente de Batería",
+          "description": "Servicio de arranque con batería descargada"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cambio de Neumáticos",
+          "description": "Cambio de rueda en ruta"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Provisión de Combustible",
+          "description": "Entrega de combustible en ruta"
+        }
+      }
+    ]
+  },
+
+  "sameAs": [
+    SITE_CONFIG.social.facebook,
+    SITE_CONFIG.social.instagram
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,10 @@
+# robots.txt para Auxilios FC
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://auxiliosfc.com.ar/sitemap-index.xml
+
+# Evitar indexación de archivos del sistema
+Disallow: /_astro/
+Disallow: /*.json$

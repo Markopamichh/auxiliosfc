@@ -1,0 +1,58 @@
+---
+import SEO from "@/components/seo/SEO.astro";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema.astro";
+import OpenGraph from "@/components/seo/OpenGraph.astro";
+import { SITE_CONFIG } from "@/config/site";
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  canonicalURL = Astro.url.href,
+} = Astro.props;
+
+const isDevelopment = import.meta.env.DEV;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      canonicalURL={canonicalURL}
+    />
+    <OpenGraph
+      title={title}
+      description={description}
+      image={image}
+      url={canonicalURL}
+    />
+    <LocalBusinessSchema />
+
+    <!-- Google Analytics - Solo en producción -->
+    {!isDevelopment && (
+      <>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX'); // PLACEHOLDER - Reemplazar con ID real
+        </script>
+      </>
+    )}
+  </head>
+  <body class="antialiased">
+    <slot />
+  </body>
+</html>

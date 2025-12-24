@@ -1,0 +1,60 @@
+---
+import { SITE_CONFIG } from "@/config/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: "website" | "article";
+}
+
+const {
+  title = SITE_CONFIG.title,
+  description = SITE_CONFIG.description,
+  image = `${SITE_CONFIG.url}/images/fiveicon.png`,
+  canonicalURL = SITE_CONFIG.url,
+  type = "website",
+} = Astro.props;
+
+const siteTitle = title === SITE_CONFIG.title ? title : `${title} | ${SITE_CONFIG.name}`;
+---
+
+<!-- Primary Meta Tags -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{siteTitle}</title>
+<meta name="title" content={siteTitle} />
+<meta name="description" content={description} />
+<meta name="keywords" content={SITE_CONFIG.seo.keywords.join(", ")} />
+<meta name="author" content={SITE_CONFIG.author} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Language and Locale -->
+<html lang="es" />
+<meta name="language" content="Spanish" />
+<meta name="geo.region" content="AR-Q" />
+<meta name="geo.placename" content="Neuquén" />
+<meta name="geo.position" content={`${SITE_CONFIG.business.coordinates.lat};${SITE_CONFIG.business.coordinates.lng}`} />
+<meta name="ICBM" content={`${SITE_CONFIG.business.coordinates.lat}, ${SITE_CONFIG.business.coordinates.lng}`} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/fiveicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/fiveicon.png" />
+
+<!-- Preconnect to external domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://maps.googleapis.com" />
+<link rel="dns-prefetch" href="https://wa.me" />
+
+<!-- Robots -->
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#FFA500" />

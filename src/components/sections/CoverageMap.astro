@@ -1,0 +1,64 @@
+---
+import { SITE_CONFIG } from "@/config/site";
+---
+
+<section id="cobertura" class="section bg-white">
+  <div class="container-custom">
+    <h2 class="section-title">
+      Dónde Operamos
+    </h2>
+    <p class="section-subtitle">
+      Servicio de auxilio mecánico y grúas en toda la provincia de Neuquén
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Map -->
+      <div class="order-2 lg:order-1">
+        <div class="rounded-xl overflow-hidden shadow-card h-96">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191885.4421157!2d-68.23517!3d-38.95161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33ba35eb8e35%3A0x6220acb810e3e2f3!2sNeuqu%C3%A9n%2C%20Neuqu%C3%A9n%20Province!5e0!3m2!1sen!2sar!4v1703000000000!5m2!1sen!2sar"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de Auxilios FC en Neuquén"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Coverage Areas List -->
+      <div class="order-1 lg:order-2">
+        <h3 class="text-2xl font-display font-bold mb-6 text-secondary">
+          Zonas de Cobertura Principal
+        </h3>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          {SITE_CONFIG.business.coverageAreas.map(area => (
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-primary shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-secondary-lighter">{area}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-primary/10 rounded-xl p-6">
+          <h4 class="font-display font-bold text-lg mb-2 text-secondary">
+            Cobertura Provincial Completa
+          </h4>
+          <p class="text-secondary-lighter mb-4">
+            Nuestra base está en Neuquén Capital. Brindamos servicio de traslado y auxilio mecánico en todas las ciudades de la provincia.
+          </p>
+          <div class="flex items-center gap-2 text-primary font-semibold">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Servicio Disponible en Toda la Provincia de Neuquén</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

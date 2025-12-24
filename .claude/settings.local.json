@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /A \"C:\\\\Users\\\\Administrator\\\\OneDrive\\\\Escritorio\\\\Auxilios FC\")",
+      "Bash(npm create astro:*)",
+      "Bash(npx astro:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}

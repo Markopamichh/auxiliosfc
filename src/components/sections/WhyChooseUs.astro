@@ -1,0 +1,44 @@
+---
+import { BENEFITS } from "@/config/benefits";
+import BenefitCard from "@/components/ui/BenefitCard.astro";
+---
+
+<section id="nosotros" class="section bg-neutral-50">
+  <div class="container-custom">
+    <h2 class="section-title">
+      ¿Por qué elegir Auxilios FC?
+    </h2>
+    <p class="section-subtitle">
+      Más de una década de experiencia brindando el mejor servicio de grúas y auxilio mecánico en Neuquén
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {BENEFITS.map(benefit => (
+        <BenefitCard
+          title={benefit.title}
+          description={benefit.description}
+        />
+      ))}
+    </div>
+
+    <!-- Stats Section -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+      <div class="text-center">
+        <div class="text-4xl md:text-5xl font-display font-bold text-primary mb-2">24/7</div>
+        <p class="text-secondary-lighter">Atención Continua</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl md:text-5xl font-display font-bold text-primary mb-2">+1000</div>
+        <p class="text-secondary-lighter">Clientes Satisfechos</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl md:text-5xl font-display font-bold text-primary mb-2">10+</div>
+        <p class="text-secondary-lighter">Años de Experiencia</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl md:text-5xl font-display font-bold text-primary mb-2">100%</div>
+        <p class="text-secondary-lighter">Cobertura Provincial</p>
+      </div>
+    </div>
+  </div>
+</section>

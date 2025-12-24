@@ -1,0 +1,43 @@
+---
+// Gallery images from the available webp files
+const galleryImages = [
+  { src: "/images/grua8.webp", alt: "Grúa Auxilios FC en servicio" },
+  { src: "/images/grua9.webp", alt: "Equipo de grúa profesional" },
+  { src: "/images/grua10.webp", alt: "Servicio de auxilio mecánico" },
+  { src: "/images/grua11.webp", alt: "Traslado de vehículo" },
+  { src: "/images/grua12.webp", alt: "Grúa para vehículos pesados" },
+  { src: "/images/grua13.webp", alt: "Auxilio en ruta Neuquén" },
+  { src: "/images/grua14.webp", alt: "Servicio de remolque" },
+  { src: "/images/grua15.webp", alt: "Equipamiento especializado" },
+  { src: "/images/grua16.webp", alt: "Grúa en operación" },
+];
+---
+
+<section id="equipamiento" class="section bg-neutral-50">
+  <div class="container-custom">
+    <h2 class="section-title">
+      Nuestro Equipamiento
+    </h2>
+    <p class="section-subtitle">
+      Grúas y equipamiento de última generación para brindarte el mejor servicio
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {galleryImages.map((image, index) => (
+        <div class="group relative overflow-hidden rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300">
+          <img
+            src={image.src}
+            alt={image.alt}
+            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <p class="text-white font-semibold">{image.alt}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
