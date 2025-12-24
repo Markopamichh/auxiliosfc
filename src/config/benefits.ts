@@ -31,9 +31,9 @@ export const BENEFITS: Benefit[] = [
     icon: "mdi:shield-check",
   },
   {
-    id: "cobertura-provincial",
-    title: "Cobertura en Toda la Provincia",
-    description: "Con base en Neuquén Capital, brindamos servicio en toda la provincia de Neuquén. Estamos listos para asistirte con la misma calidad y profesionalismo en cualquier ciudad.",
+    id: "cobertura-nacional",
+    title: "Cobertura Nacional",
+    description: "Con base en Centenario, Neuquén, brindamos servicio en toda la provincia y cobertura nacional. Estamos listos para asistirte en cualquier punto del país con la misma calidad y profesionalismo.",
     icon: "mdi:map-marker-radius",
   },
   {

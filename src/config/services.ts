@@ -26,7 +26,7 @@ export const SERVICES: Service[] = [
     title: "Traslado de Motos",
     description: "Servicio especializado en traslado de motocicletas con sistemas de sujeción seguros. Cuidamos tu moto como si fuera nuestra.",
     icon: "mdi:motorbike",
-    image: "/images/grua2.webp",
+    image: "/images/gruamoto.webp",
   },
   {
     id: "puente-bateria",
@@ -61,6 +61,6 @@ export const SERVICES: Service[] = [
     title: "Traslado de Maquinaria",
     description: "Servicio de traslado de maquinaria pesada, herramientas y equipos en general. Contamos con plataformas especializadas para cargas de gran tamaño.",
     icon: "mdi:forklift",
-    image: "/images/grua7.webp",
+    image: "/images/grua2.webp",
   },
 ];

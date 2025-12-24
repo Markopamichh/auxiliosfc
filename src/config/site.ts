@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: "Auxilios FC",
   title: "Auxilios FC - Grúas y Auxilio Mecánico 24/7 en Neuquén",
-  description: "Servicio de grúas, remolques y auxilio mecánico en Neuquén. Atención 24 horas en toda la provincia. Traslado de vehículos, motos y maquinaria. Seriedad, responsabilidad y puntualidad.",
+  description: "Servicio de grúas, remolques y auxilio mecánico en Neuquén con cobertura nacional. Atención 24 horas. Traslado de vehículos, motos y maquinaria. Seriedad, responsabilidad y puntualidad.",
   url: "https://auxiliosfc.com.ar",
   locale: "es_AR",
   author: "Auxilios FC",
@@ -19,18 +19,18 @@ export const SITE_CONFIG = {
 
   business: {
     address: {
-      street: "Neuquén Capital",
-      city: "Neuquén",
+      street: "Colon 235",
+      city: "Centenario",
       state: "Neuquén",
-      zipCode: "8300",
+      zipCode: "8309",
       country: "Argentina",
-      full: "Neuquén Capital, Neuquén, Argentina", // PLACEHOLDER - Dirección completa
+      full: "Colon 235, Centenario, Neuquén, Argentina",
     },
     hours: "Atención 24 horas, los 7 días de la semana",
     foundedYear: 2015,
     coordinates: {
-      lat: -38.9516,
-      lng: -68.0591,
+      lat: -38.8333,
+      lng: -68.0667,
     },
     coverageAreas: [
       "Neuquén Capital",
@@ -47,7 +47,7 @@ export const SITE_CONFIG = {
 
   social: {
     facebook: "https://facebook.com/auxiliosfc",
-    instagram: "https://instagram.com/auxiliosfc",
+    instagram: "https://www.instagram.com/auxiliofc/",
   },
 
   seo: {
