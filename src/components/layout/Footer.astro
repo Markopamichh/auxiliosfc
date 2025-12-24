@@ -2,7 +2,7 @@
 import { SITE_CONFIG } from "@/config/site";
 ---
 
-<footer class="bg-secondary text-white">
+<footer class="bg-secondary text-black">
   <div class="container-custom py-16">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
       <!-- Column 1: About & Logo -->
@@ -17,7 +17,7 @@ import { SITE_CONFIG } from "@/config/site";
           />
           <span class="text-xl font-display font-bold">Auxilios FC</span>
         </div>
-        <p class="text-neutral-100 mb-4">
+        <p class="text-black mb-4">
           Servicio profesional de grúas, remolques y auxilio mecánico en Neuquén.
           Seriedad, responsabilidad y puntualidad en cada servicio.
         </p>
@@ -29,7 +29,7 @@ import { SITE_CONFIG } from "@/config/site";
       <!-- Column 2: Contact Info -->
       <div>
         <h3 class="text-xl font-display font-bold mb-4">Contacto</h3>
-        <div class="space-y-3 text-neutral-100">
+        <div class="space-y-3 text-black">
           <div class="flex items-start gap-3">
             <svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
@@ -85,7 +85,7 @@ import { SITE_CONFIG } from "@/config/site";
       <!-- Column 3: Links & Coverage -->
       <div>
         <h3 class="text-xl font-display font-bold mb-4">Zona de Cobertura</h3>
-        <ul class="text-neutral-100 space-y-2 mb-6">
+        <ul class="text-black space-y-2 mb-6">
           {SITE_CONFIG.business.coverageAreas.slice(0, 6).map(area => (
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -102,7 +102,7 @@ import { SITE_CONFIG } from "@/config/site";
             href={SITE_CONFIG.social.facebook}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary transition-colors"
+            class="w-10 h-10 flex items-center justify-center rounded-full  hover:bg-primary transition-colors"
             aria-label="Síguenos en Facebook"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -113,7 +113,7 @@ import { SITE_CONFIG } from "@/config/site";
             href={SITE_CONFIG.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary transition-colors"
+            class="w-10 h-10 flex items-center justify-center rounded-full  hover:bg-primary transition-colors"
             aria-label="Síguenos en Instagram"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
