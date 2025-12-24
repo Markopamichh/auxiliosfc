@@ -54,7 +54,7 @@ export const SERVICES: Service[] = [
     title: "Rescate de Vehículos Siniestrados",
     description: "Traslado de vehículos siniestrados, bloqueados o con faltantes. Emitimos facturas para reembolso de seguros. Todas las formas de pago.",
     icon: "mdi:car-wrench",
-    image: "/images/grua6.webp",
+    image: "/images/gruasiniestro.webp",
   },
   {
     id: "maquinaria",

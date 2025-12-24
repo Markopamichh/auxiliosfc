@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  safelist: [
+    'bg-accent-whatsapp',
+    'hover:bg-accent-whatsapp',
+    'text-accent-whatsapp',
+    'border-accent-whatsapp',
+  ],
   theme: {
     extend: {
       colors: {
