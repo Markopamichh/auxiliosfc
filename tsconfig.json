@@ -4,8 +4,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "isolatedModules": true
   },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist", "node_modules", ".astro"]
 }
