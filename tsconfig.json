@@ -5,7 +5,9 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "isolatedModules": true
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
   },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist", "node_modules", ".astro"]
