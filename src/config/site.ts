@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   name: "Auxilios FC",
-  title: "Auxilios FC - Grúas y Auxilio Mecánico 24/7 en Neuquén",
+  title: "Auxilios Fc / Gruas / Remolques / Auxilio Mecanico las 24 hs Neuquen",
   description: "Servicio de grúas, remolques y auxilio mecánico en Neuquén con cobertura nacional. Atención 24 horas. Traslado de vehículos, motos y maquinaria. Seriedad, responsabilidad y puntualidad.",
   url: "https://auxiliosfc.com.ar",
   locale: "es_AR",
@@ -63,6 +63,30 @@ export const SITE_CONFIG = {
       "grua para moto neuquen",
       "cambio neumatico ruta",
       "puente bateria neuquen",
+      // Keywords de ciudades específicas
+      "grua centenario neuquen",
+      "auxilio mecanico plottier",
+      "grua cutral co",
+      "servicio grua villa la angostura",
+      "auxilio mecanico san martin de los andes",
+      "grua zapala",
+      "grua junin de los andes",
+      "grua plaza huincul",
+      // Keywords de urgencia/emergencia
+      "grua urgente neuquen",
+      "auxilio mecanico urgente",
+      "grua emergencia neuquen",
+      "asistencia vial urgente neuquen",
+      // Tipos de vehículos
+      "grua para autos neuquen",
+      "grua vehiculos pesados neuquen",
+      "traslado maquinaria neuquen",
+      "grua camiones neuquen",
+      // Keywords de valor
+      "mejor servicio grua neuquen",
+      "grua profesional neuquen",
+      "grua economica neuquen",
+      "grua confiable neuquen",
     ],
   },
 };

@@ -1,0 +1,58 @@
+---
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda el servicio de grúa en llegar en Neuquén?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestro tiempo promedio de respuesta es de 15-30 minutos en Neuquén Capital y zona cercana. Para otras localidades de la provincia, el tiempo puede variar según la distancia, pero garantizamos la respuesta más rápida posible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El servicio de grúa está disponible las 24 horas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, Auxilios FC ofrece servicio de grúas y auxilio mecánico las 24 horas del día, los 7 días de la semana, incluidos fines de semana y feriados. Estamos siempre listos para asistirte cuando lo necesites."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué zonas de Neuquén cubren con el servicio de grúa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Brindamos servicio en toda la provincia de Neuquén, incluyendo Neuquén Capital, Plottier, Centenario, Cutral-Có, Plaza Huincul, Zapala, Junín de los Andes, San Martín de los Andes y Villa La Angostura. También ofrecemos cobertura nacional para traslados de larga distancia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tipos de vehículos pueden trasladar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trasladamos todo tipo de vehículos: autos, camionetas, motos, vehículos pesados, maquinaria y vehículos siniestrados. Contamos con grúas especializadas para cada tipo de traslado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Emiten factura para presentar al seguro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, emitimos factura tipo A y B para que puedas presentar al seguro. Trabajamos con todas las compañías de seguros y brindamos la documentación necesaria para tus trámites."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué servicios de auxilio mecánico ofrecen además de grúa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Además del servicio de grúa, ofrecemos puente de batería, cambio de neumáticos en ruta, provisión de combustible, asistencia mecánica básica y rescate de vehículos siniestrados. Estamos equipados para resolver la mayoría de las emergencias en ruta."
+      }
+    }
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

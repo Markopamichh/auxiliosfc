@@ -1,6 +1,9 @@
 ---
 import SEO from "@/components/seo/SEO.astro";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema.astro";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema.astro";
+import FAQSchema from "@/components/seo/FAQSchema.astro";
+import WebSiteSchema from "@/components/seo/WebSiteSchema.astro";
 import OpenGraph from "@/components/seo/OpenGraph.astro";
 import { SITE_CONFIG } from "@/config/site";
 import "@/styles/global.css";
@@ -38,21 +41,29 @@ const isDevelopment = import.meta.env.DEV;
       url={canonicalURL}
     />
     <LocalBusinessSchema />
+    <BreadcrumbSchema />
+    <FAQSchema />
+    <WebSiteSchema />
 
-    <!-- Google Analytics - Solo en producción -->
+    <!-- Google Tag Manager - Solo en producción -->
     {!isDevelopment && (
-      <>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-        <script is:inline>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX'); // PLACEHOLDER - Reemplazar con ID real
-        </script>
-      </>
+      <script is:inline>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NFD7RX82');
+      </script>
     )}
   </head>
   <body class="antialiased">
+    <!-- Google Tag Manager (noscript) - Solo en producción -->
+    {!isDevelopment && (
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFD7RX82"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+    )}
     <slot />
   </body>
 </html>
