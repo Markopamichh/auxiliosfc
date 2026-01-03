@@ -63,6 +63,13 @@ export const SITE_CONFIG = {
       "grua para moto neuquen",
       "cambio neumatico ruta",
       "puente bateria neuquen",
+      "grua",
+      "auxilio mecanico",
+      "remolque",
+      "asistencia vial",
+      "grua 24 horas",
+      "remolque",
+      "auxilio",
       // Keywords de ciudades específicas
       "grua centenario neuquen",
       "auxilio mecanico plottier",
@@ -77,6 +84,8 @@ export const SITE_CONFIG = {
       "auxilio mecanico urgente",
       "grua emergencia neuquen",
       "asistencia vial urgente neuquen",
+      "remolque urgente neuquen",
+
       // Tipos de vehículos
       "grua para autos neuquen",
       "grua vehiculos pesados neuquen",
