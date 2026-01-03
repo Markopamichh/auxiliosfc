@@ -17,7 +17,7 @@ const {
   type = "website",
 } = Astro.props;
 
-const siteTitle = title === SITE_CONFIG.title ? title : `${title} | ${SITE_CONFIG.name}`;
+const siteTitle = SITE_CONFIG.title; // Forzar mismo título en todas las páginas
 ---
 
 <!-- Primary Meta Tags -->
