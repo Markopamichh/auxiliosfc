@@ -1,0 +1,182 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp.astro";
+import { SITE_CONFIG } from "@/config/site";
+
+const title = "Servicio de Grúa en Neuquén - Traslado de Vehículos 24hs";
+const description = "Servicio de grúa en Neuquén las 24 horas. Traslado seguro de vehículos livianos, semipesados y pesados a taller o domicilio. Cobertura en toda la provincia.";
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative .bg-gradient-to-br from-primary to-orange-600 text-white py-20">
+      <div class="container-custom">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Servicio de Grúa en Neuquén
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-orange-100">
+            Traslado seguro de vehículos las 24 horas del día, los 365 días del año
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito servicio de grúa")}`} class="btn-secondary">
+              Solicitar Grúa Ahora
+            </a>
+            <a href="tel:+542995837777" class="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
+              Llamar: 0299-5837777
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-secondary mb-6">
+              Grúas Profesionales en Neuquén
+            </h2>
+            <p class="text-lg text-gray-700 mb-4">
+              Contamos con equipamiento de última generación para realizar traslados seguros y sin daños de todo tipo de vehículos. Nuestras grúas están preparadas para atender emergencias en cualquier lugar de Neuquén y la región.
+            </p>
+            <p class="text-lg text-gray-700 mb-4">
+              Realizamos traslados a talleres mecánicos, domicilios particulares, depósitos o donde necesites. Trabajamos con aseguradoras y particulares, emitiendo facturas para reintegros.
+            </p>
+
+            <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">
+              Tipos de vehículos que trasladamos:
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Autos, camionetas y utilitarios</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Vehículos semipesados y pesados</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Vehículos siniestrados o bloqueados</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Vehículos de colección y alta gama</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Maquinaria y equipamiento especial</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <img src="/images/grua.webp" alt="Servicio de grúa en Neuquén" class="rounded-lg shadow-xl w-full" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage Areas -->
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <h2 class="text-3xl font-bold text-secondary mb-8 text-center">
+          Cobertura en toda la Provincia de Neuquén
+        </h2>
+        <p class="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+          Nuestro servicio de grúa está disponible en todas las localidades de Neuquén. Atendemos emergencias en rutas, zonas urbanas y rurales.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {SITE_CONFIG.business.coverageAreas.map(city => (
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-bold text-xl text-primary mb-2">Grúa en {city}</h3>
+              <p class="text-gray-600">Servicio 24 horas disponible</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <h2 class="text-3xl font-bold text-secondary mb-12 text-center">
+          ¿Por qué elegir nuestro servicio de grúa?
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl text-secondary mb-3">Atención 24/7</h3>
+            <p class="text-gray-600">Disponibles las 24 horas, los 365 días del año para atender tu emergencia</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl text-secondary mb-3">Traslado Seguro</h3>
+            <p class="text-gray-600">Equipamiento de última generación para proteger tu vehículo durante el traslado</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl text-secondary mb-3">Precios Justos</h3>
+            <p class="text-gray-600">Tarifas competitivas y todas las formas de pago. Facturamos para seguros</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section .bg-gradient-to-r from-primary to-orange-600 text-white">
+      <div class="container-custom text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          ¿Necesitás una grúa ahora?
+        </h2>
+        <p class="text-xl mb-8 text-orange-100">
+          Atendemos tu llamado las 24 horas. Llegamos rápido a cualquier punto de Neuquén
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito servicio de grúa urgente")}`} class="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition text-lg">
+            WhatsApp: {SITE_CONFIG.contact.phoneDisplay}
+          </a>
+          <a href="tel:+542995837777" class="bg-secondary text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition text-lg">
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

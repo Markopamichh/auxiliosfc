@@ -1,0 +1,252 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp.astro";
+import { SITE_CONFIG } from "@/config/site";
+import { BLOG_POSTS } from "@/config/blog-posts";
+
+const post = BLOG_POSTS.find(p => p.slug === "cuidados-basicos-para-evitar-quedarte-sin-bateria");
+---
+
+<BaseLayout
+  title={post?.title}
+  description={post?.description}
+  image={post?.image}
+>
+  <Header />
+
+  <main>
+    <article class="py-16 bg-white">
+      <div class="container-custom max-w-4xl">
+        <nav class="mb-8 text-sm text-gray-600">
+          <a href="/" class="hover:text-primary">Inicio</a>
+          <span class="mx-2">/</span>
+          <a href="/blog" class="hover:text-primary">Blog</a>
+          <span class="mx-2">/</span>
+          <span class="text-secondary">{post?.title}</span>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">
+            {post?.title}
+          </h1>
+          <div class="flex items-center gap-4 text-gray-600 mb-6">
+            <time datetime={post?.date}>{new Date(post?.date || "").toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            <span>•</span>
+            <span>{post?.category}</span>
+          </div>
+          <img src={post?.image} alt={post?.title} class="w-full h-96 object-cover rounded-lg shadow-lg mb-8" />
+        </header>
+
+        <div class="prose prose-lg max-w-none">
+          <p class="text-xl text-gray-700 mb-6 font-semibold">
+            Quedarse sin batería es uno de los problemas más comunes que enfrentan los conductores. La buena noticia es que con cuidados básicos y mantenimiento preventivo, puedes evitar la mayoría de estos inconvenientes. En esta guía te mostramos cómo cuidar la batería de tu vehículo.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">¿Cómo Funciona la Batería del Auto?</h2>
+          <p class="text-gray-700 mb-4">
+            La batería es el corazón eléctrico de tu vehículo. Su función principal es proporcionar la energía necesaria para arrancar el motor y alimentar los sistemas eléctricos cuando el motor está apagado.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Una vez que el motor arranca, el alternador toma el control y recarga la batería mientras conduces. Sin embargo, si la batería está débil o los viajes son muy cortos, puede no recargarse completamente.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Señales de que tu Batería Está Fallando</h2>
+          <p class="text-gray-700 mb-4">
+            Reconocer los síntomas tempranos puede evitarte quedar varado:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li><strong>Arranque lento:</strong> El motor tarda más de lo normal en encender</li>
+            <li><strong>Luces tenues:</strong> Las luces del tablero o faros se ven más débiles</li>
+            <li><strong>Olor a azufre:</strong> Un olor similar a huevo podrido cerca de la batería</li>
+            <li><strong>Batería hinchada:</strong> La carcasa de la batería parece inflada</li>
+            <li><strong>Corrosión visible:</strong> Residuos blancos o verdosos en los bornes</li>
+            <li><strong>Más de 3 años de antigüedad:</strong> Las baterías típicamente duran 3-5 años</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Cuidados Básicos de la Batería</h2>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">1. Limpieza Regular de Bornes</h3>
+          <p class="text-gray-700 mb-4">
+            La corrosión en los bornes de la batería puede impedir una conexión eléctrica adecuada. Limpia los bornes cada 3-6 meses:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Desconecta la batería (primero el borne negativo, después el positivo)</li>
+            <li>Usa una mezcla de bicarbonato de sodio y agua</li>
+            <li>Limpia con un cepillo de cerdas metálicas</li>
+            <li>Enjuaga con agua y seca completamente</li>
+            <li>Aplica vaselina o grasa dieléctrica en los bornes</li>
+            <li>Reconecta (primero positivo, después negativo)</li>
+          </ul>
+
+          <div class="bg-orange-50 border-l-4 border-primary p-6 my-8">
+            <h3 class="text-xl font-bold text-secondary mb-3">¿Batería Descargada?</h3>
+            <p class="text-gray-700 mb-4">
+              Si tu batería ya está descargada y necesitas un puente urgente en Neuquén, <strong>Auxilios FC</strong> llega rápido con el equipamiento necesario.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito puente de batería")}`} class="btn-primary text-center">
+                Solicitar Puente
+              </a>
+              <a href="tel:+542995837777" class="btn-secondary text-center">
+                Llamar: 0299-5837777
+              </a>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">2. Evita Viajes Muy Cortos</h3>
+          <p class="text-gray-700 mb-4">
+            Los viajes cortos y frecuentes no permiten que la batería se recargue completamente. El arranque consume mucha energía, y si solo conduces 5-10 minutos, el alternador no tiene tiempo suficiente para recargar la batería.
+          </p>
+          <p class="text-gray-700 mb-4">
+            <strong>Solución:</strong> Combina mandados en un solo viaje más largo, o al menos una vez por semana realiza un trayecto de 20-30 minutos para recargar completamente la batería.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">3. Apaga Todos los Accesorios al Estacionar</h3>
+          <p class="text-gray-700 mb-4">
+            Dejar luces, radio o cargadores conectados cuando el motor está apagado descarga la batería. Antes de salir del auto, verifica:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Luces interiores y exteriores apagadas</li>
+            <li>Radio apagada</li>
+            <li>Cargadores de celular desconectados</li>
+            <li>Aire acondicionado apagado</li>
+            <li>Asegúrate de que no queden luces encendidas al cerrar el auto</li>
+          </ul>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">4. Revisa el Nivel de Líquido (Baterías No Selladas)</h3>
+          <p class="text-gray-700 mb-4">
+            Si tu batería no es sellada (libre de mantenimiento), revisa el nivel de agua destilada cada 2-3 meses:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>El líquido debe cubrir las placas internas</li>
+            <li>Usa solo agua destilada, nunca agua de grifo</li>
+            <li>No llenes en exceso</li>
+            <li>Verifica después de recargar la batería</li>
+          </ul>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">5. Protégela del Clima Extremo</h3>
+          <p class="text-gray-700 mb-4">
+            En Neuquén, las temperaturas extremas (tanto frías como calientes) afectan el rendimiento de la batería:
+          </p>
+          <p class="text-gray-700 mb-4">
+            <strong>En invierno:</strong>
+          </p>
+          <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+            <li>El frío reduce la capacidad de la batería hasta en un 50%</li>
+            <li>Si es posible, estaciona en lugares cubiertos</li>
+            <li>Considera usar una manta térmica para la batería</li>
+            <li>Asegúrate de que esté completamente cargada antes del invierno</li>
+          </ul>
+          <p class="text-gray-700 mb-4">
+            <strong>En verano:</strong>
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>El calor acelera la corrosión interna</li>
+            <li>Estaciona a la sombra cuando sea posible</li>
+            <li>Verifica los niveles de líquido más frecuentemente</li>
+          </ul>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">6. Desconecta la Batería si no Usarás el Auto por Mucho Tiempo</h3>
+          <p class="text-gray-700 mb-4">
+            Si vas a dejar el auto sin usar por más de 2 semanas (vacaciones, viajes largos):
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Desconecta el borne negativo para evitar drenaje parasítico</li>
+            <li>O usa un cargador/mantenedor de batería</li>
+            <li>Arranca el motor una vez cada 2 semanas si es posible</li>
+          </ul>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">7. Verifica el Alternador</h3>
+          <p class="text-gray-700 mb-4">
+            Un alternador defectuoso no recargará la batería adecuadamente, causando descargas frecuentes. Señales de problemas con el alternador:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Luz de batería encendida en el tablero</li>
+            <li>Luces que parpadean o se atenúan al acelerar</li>
+            <li>Batería que se descarga aunque sea nueva</li>
+            <li>Ruidos extraños del motor</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Mantenimiento Preventivo Profesional</h2>
+          <p class="text-gray-700 mb-4">
+            Durante el service regular de tu vehículo, el mecánico debe:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Probar el voltaje de la batería (debe ser 12.6V o más)</li>
+            <li>Verificar el sistema de carga (alternador)</li>
+            <li>Revisar el estado de los cables y conexiones</li>
+            <li>Comprobar si hay drenaje parasítico</li>
+            <li>Limpiar bornes y terminales</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">¿Cuándo Reemplazar la Batería?</h2>
+          <p class="text-gray-700 mb-4">
+            Considera reemplazar la batería cuando:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Tiene más de 3-4 años de antigüedad</li>
+            <li>No mantiene la carga a pesar del mantenimiento</li>
+            <li>La carcasa está hinchada o dañada</li>
+            <li>Hay corrosión excesiva que vuelve constantemente</li>
+            <li>El arranque es lento incluso con clima templado</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Tips para Elegir una Batería Nueva</h2>
+          <p class="text-gray-700 mb-4">
+            Si necesitas reemplazar la batería:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Compra una batería con las especificaciones correctas para tu vehículo</li>
+            <li>Verifica la fecha de fabricación (debe ser reciente)</li>
+            <li>Elige una con garantía de al menos 2 años</li>
+            <li>Considera las condiciones climáticas de Neuquén</li>
+            <li>Si usas muchos accesorios eléctricos, elige mayor capacidad</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Qué Hacer si la Batería se Descarga</h2>
+          <p class="text-gray-700 mb-4">
+            Si a pesar de los cuidados tu batería se descarga:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Llama a un servicio de auxilio mecánico profesional</li>
+            <li>No intentes dar puente si no sabes hacerlo correctamente</li>
+            <li>Conectar mal los cables puede dañar la computadora del auto</li>
+            <li>Un servicio profesional tiene el equipo adecuado y experiencia</li>
+          </ul>
+
+          <div class="bg-gray-50 p-8 rounded-lg my-8">
+            <h3 class="text-2xl font-bold text-secondary mb-4">Conclusión</h3>
+            <p class="text-gray-700 mb-4">
+              El mantenimiento preventivo de la batería es simple pero fundamental. Con cuidados básicos como limpieza regular, evitar viajes muy cortos y protección contra climas extremos, puedes extender significativamente la vida útil de tu batería y evitar quedar varado.
+            </p>
+            <p class="text-gray-700">
+              Recuerda que una batería bien mantenida no solo te ahorra dinero en reemplazos, sino que también te da tranquilidad de que tu vehículo arrancará cuando lo necesites, especialmente en las frías mañanas de invierno en Neuquén.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 .bg-gradient-to-r from-primary to-orange-600 text-white p-8 rounded-lg text-center">
+          <h3 class="text-2xl font-bold mb-4">¿Problemas con la Batería?</h3>
+          <p class="text-lg mb-6">Servicio de puente de batería disponible 24/7 en Neuquén</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito puente de batería")}`} class="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
+              WhatsApp: {SITE_CONFIG.contact.phoneDisplay}
+            </a>
+            <a href="tel:+542995837777" class="bg-secondary text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition">
+              Llamar Ahora
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="/blog" class="text-primary hover:underline text-lg">← Volver al Blog</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

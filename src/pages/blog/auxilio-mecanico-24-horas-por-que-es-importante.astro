@@ -1,0 +1,219 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp.astro";
+import { SITE_CONFIG } from "@/config/site";
+import { BLOG_POSTS } from "@/config/blog-posts";
+
+const post = BLOG_POSTS.find(p => p.slug === "auxilio-mecanico-24-horas-por-que-es-importante");
+---
+
+<BaseLayout
+  title={post?.title}
+  description={post?.description}
+  image={post?.image}
+>
+  <Header />
+
+  <main>
+    <article class="py-16 bg-white">
+      <div class="container-custom max-w-4xl">
+        <nav class="mb-8 text-sm text-gray-600">
+          <a href="/" class="hover:text-primary">Inicio</a>
+          <span class="mx-2">/</span>
+          <a href="/blog" class="hover:text-primary">Blog</a>
+          <span class="mx-2">/</span>
+          <span class="text-secondary">{post?.title}</span>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">
+            {post?.title}
+          </h1>
+          <div class="flex items-center gap-4 text-gray-600 mb-6">
+            <time datetime={post?.date}>{new Date(post?.date || "").toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            <span>•</span>
+            <span>{post?.category}</span>
+          </div>
+          <img src={post?.image} alt={post?.title} class="w-full h-96 object-cover rounded-lg shadow-lg mb-8" />
+        </header>
+
+        <div class="prose prose-lg max-w-none">
+          <p class="text-xl text-gray-700 mb-6 font-semibold">
+            Las emergencias vehiculares no respetan horarios. Un auto puede descomponerse a las 3 de la mañana en una ruta oscura, un domingo feriado o durante una tormenta. Por eso, contar con un servicio de auxilio mecánico disponible las 24 horas del día es fundamental.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">¿Qué es el Auxilio Mecánico 24 Horas?</h2>
+          <p class="text-gray-700 mb-4">
+            El auxilio mecánico 24 horas es un servicio que está disponible en cualquier momento del día o de la noche, los 7 días de la semana, incluyendo fines de semana y feriados. Este servicio garantiza que siempre tengas a quién llamar cuando tu vehículo presente problemas, sin importar la hora.
+          </p>
+          <p class="text-gray-700 mb-4">
+            A diferencia de los talleres mecánicos tradicionales que tienen horarios limitados, un servicio de auxilio 24/7 cuenta con personal y unidades listas para responder a emergencias en cualquier momento.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">¿Por Qué es Importante?</h2>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">1. Las Emergencias No Tienen Horario</h3>
+          <p class="text-gray-700 mb-4">
+            La mayoría de los problemas vehiculares ocurren cuando menos los esperamos:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>En viajes nocturnos de regreso a casa después del trabajo</li>
+            <li>Durante escapadas de fin de semana a la cordillera</li>
+            <li>En feriados largos cuando todo está cerrado</li>
+            <li>En las primeras horas de la mañana camino al aeropuerto</li>
+            <li>Durante emergencias médicas que requieren traslado urgente</li>
+          </ul>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">2. Seguridad en Rutas y Zonas Peligrosas</h3>
+          <p class="text-gray-700 mb-4">
+            Quedarse varado de noche en una ruta puede ser extremadamente peligroso. Un servicio 24 horas te garantiza que no estarás solo esperando ayuda por horas en la oscuridad.
+          </p>
+          <p class="text-gray-700 mb-4">
+            En Neuquén, con sus extensas rutas que conectan localidades distantes, es especialmente importante tener la certeza de que el auxilio llegará sin importar la hora.
+          </p>
+
+          <div class="bg-orange-50 border-l-4 border-primary p-6 my-8">
+            <h3 class="text-xl font-bold text-secondary mb-3">Auxilio 24/7 en Neuquén</h3>
+            <p class="text-gray-700 mb-4">
+              <strong>Auxilios FC</strong> está disponible las 24 horas, los 365 días del año en toda la provincia de Neuquén. Nunca estarás solo en una emergencia vehicular.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito auxilio urgente")}`} class="btn-primary text-center">
+                Solicitar Auxilio
+              </a>
+              <a href="tel:+542995837777" class="btn-secondary text-center">
+                Llamar: 0299-5837777
+              </a>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">3. Clima Extremo en Neuquén</h3>
+          <p class="text-gray-700 mb-4">
+            Neuquén experimenta condiciones climáticas extremas, especialmente en invierno con nevadas en la cordillera y temperaturas bajo cero. Estas condiciones pueden:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Descargar baterías más rápidamente</li>
+            <li>Causar problemas con el combustible</li>
+            <li>Dificultar el arranque del motor</li>
+            <li>Generar problemas con el sistema de calefacción</li>
+          </ul>
+          <p class="text-gray-700 mb-4">
+            Un servicio 24 horas garantiza que recibirás ayuda incluso en las peores condiciones climáticas, cuando más lo necesitas.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">4. Tranquilidad para Viajes Largos</h3>
+          <p class="text-gray-700 mb-4">
+            Si vas a realizar un viaje largo por Neuquén, saber que cuentas con auxilio mecánico disponible 24/7 te da tranquilidad. Puedes viajar con la certeza de que si algo sale mal, tendrás ayuda profesional sin importar dónde estés o qué hora sea.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">5. Reducción de Tiempos de Espera</h3>
+          <p class="text-gray-700 mb-4">
+            Los servicios que operan 24 horas generalmente tienen:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Personal de guardia permanente</li>
+            <li>Unidades estratégicamente ubicadas</li>
+            <li>Sistemas de respuesta rápida</li>
+            <li>Capacidad de atender múltiples emergencias simultáneas</li>
+          </ul>
+          <p class="text-gray-700 mb-4">
+            Esto se traduce en tiempos de respuesta más cortos, incluso durante la noche.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Situaciones Comunes que Requieren Auxilio Nocturno</h2>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">Batería Descargada</h3>
+          <p class="text-gray-700 mb-4">
+            Uno de los problemas más comunes, especialmente en madrugadas frías. La batería puede descargarse mientras el auto está estacionado, y descubrirlo a las 6 AM cuando necesitas ir a trabajar.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">Neumático Pinchado</h3>
+          <p class="text-gray-700 mb-4">
+            Cambiar un neumático de noche en una ruta oscura es peligroso. Un servicio profesional puede hacerlo de forma segura con la iluminación y equipamiento adecuados.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">Falta de Combustible</h3>
+          <p class="text-gray-700 mb-4">
+            Las estaciones de servicio no siempre están abiertas 24 horas, especialmente en localidades pequeñas. Un servicio de auxilio puede proveerte combustible de emergencia.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">Llaves Dentro del Auto</h3>
+          <p class="text-gray-700 mb-4">
+            Quedarse afuera del auto con las llaves adentro puede suceder a cualquier hora. Un servicio 24 horas cuenta con personal capacitado para abrir vehículos sin dañarlos.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Características de un Buen Servicio 24 Horas</h2>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li><strong>Atención telefónica real:</strong> No contestadores, sino personas que respondan las llamadas</li>
+            <li><strong>Tiempo de respuesta garantizado:</strong> Compromiso claro de cuánto tardarán en llegar</li>
+            <li><strong>Cobertura amplia:</strong> Servicio en toda la provincia, no solo zonas urbanas</li>
+            <li><strong>Equipamiento completo:</strong> Herramientas e insumos para resolver problemas en el lugar</li>
+            <li><strong>Personal capacitado:</strong> Operadores entrenados para trabajar en condiciones nocturnas</li>
+            <li><strong>Comunicación constante:</strong> Seguimiento del estado del servicio en tiempo real</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Costos del Servicio 24 Horas</h2>
+          <p class="text-gray-700 mb-4">
+            Si bien algunos servicios cobran recargos por atención nocturna, fines de semana o feriados, el costo adicional es mínimo comparado con los riesgos de quedarse varado sin ayuda.
+          </p>
+          <p class="text-gray-700 mb-4">
+            En Auxilios FC ofrecemos tarifas justas y transparentes con recargos razonables para horarios especiales. Siempre informamos el costo total antes de realizar el servicio.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Cómo Aprovechar el Servicio 24 Horas</h2>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Guarda el número en tus contactos favoritos</li>
+            <li>Comparte el número con familiares que también conducen</li>
+            <li>Ten el número anotado en la guantera del auto</li>
+            <li>Consulta las zonas de cobertura antes de viajar</li>
+            <li>Pregunta sobre los servicios incluidos (puente, cambio de rueda, etc.)</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Cobertura en Neuquén</h2>
+          <p class="text-gray-700 mb-4">
+            Un verdadero servicio 24 horas debe tener cobertura en:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Neuquén Capital y alrededores</li>
+            <li>Rutas nacionales (RN 22, RN 40, RN 237)</li>
+            <li>Localidades del interior provincial</li>
+            <li>Zona cordillerana (San Martín de los Andes, Villa La Angostura)</li>
+            <li>Zona petrolera (Cutral-Có, Plaza Huincul)</li>
+          </ul>
+
+          <div class="bg-gray-50 p-8 rounded-lg my-8">
+            <h3 class="text-2xl font-bold text-secondary mb-4">Conclusión</h3>
+            <p class="text-gray-700 mb-4">
+              Contar con un servicio de auxilio mecánico disponible 24 horas es esencial para cualquier conductor en Neuquén. Las emergencias vehiculares no respetan horarios, y estar preparado con un servicio confiable puede marcar la diferencia entre una experiencia estresante y una solución rápida y segura.
+            </p>
+            <p class="text-gray-700">
+              La inversión en tranquilidad y seguridad que ofrece un servicio 24/7 es invaluable, especialmente en una provincia como Neuquén con sus vastas distancias y condiciones climáticas desafiantes.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-gradient-to-r from-primary to-orange-600 text-white p-8 rounded-lg text-center">
+          <h3 class="text-2xl font-bold mb-4">Auxilio Mecánico Disponible Ahora</h3>
+          <p class="text-lg mb-6">Atendemos las 24 horas, los 365 días del año en toda la provincia de Neuquén</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito auxilio mecánico")}`} class="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
+              WhatsApp: {SITE_CONFIG.contact.phoneDisplay}
+            </a>
+            <a href="tel:+542995837777" class="bg-secondary text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition">
+              Llamar Ahora
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="/blog" class="text-primary hover:underline text-lg">← Volver al Blog</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

@@ -1,0 +1,163 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp.astro";
+import { SITE_CONFIG } from "@/config/site";
+
+const title = "Traslado de Motos en Neuquén - Grúa para Motocicletas";
+const description = "Servicio especializado de traslado de motos en Neuquén. Grúa para motocicletas con sistemas de sujeción seguros. Atención 24 horas en toda la provincia.";
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+
+  <main>
+    <section class="relative .bg-gradient-to-br from-primary to-orange-600 text-white py-20">
+      <div class="container-custom">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Traslado de Motos en Neuquén
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-orange-100">
+            Servicio especializado en traslado de motocicletas. Cuidamos tu moto como si fuera nuestra
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito trasladar mi moto")}`} class="btn-secondary">
+              Solicitar Traslado
+            </a>
+            <a href="tel:+542995837777" class="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
+              Llamar: 0299-5837777
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-secondary mb-6">
+              Grúa Especializada para Motocicletas
+            </h2>
+            <p class="text-lg text-gray-700 mb-4">
+              Contamos con equipamiento especializado para el traslado seguro de motocicletas de todas las cilindradas. Utilizamos sistemas de sujeción profesionales que garantizan que tu moto llegue en perfectas condiciones.
+            </p>
+            <p class="text-lg text-gray-700 mb-4">
+              Ya sea que necesites trasladar tu moto por una avería, mudanza, compra-venta o cualquier otro motivo, nuestro servicio está disponible las 24 horas del día en toda la provincia de Neuquén.
+            </p>
+
+            <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">
+              Tipos de motos que trasladamos:
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1 .flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Motos de calle y urbanas</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1 .flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Motos deportivas y de alta cilindrada</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1 .flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Motos de enduro y trail</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1 .flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Scooters y ciclomotores</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1 .flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Motos custom y chopper</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 mt-1 .flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Motos de colección y clásicas</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <img src="/images/gruamoto.webp" alt="Traslado de motos en Neuquén" class="rounded-lg shadow-xl w-full" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-gray-50">
+      <div class="container-custom">
+        <h2 class="text-3xl font-bold text-secondary mb-12 text-center">
+          Traslado Seguro y Profesional
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl text-secondary mb-3">Sujeción Segura</h3>
+            <p class="text-gray-600">Utilizamos sistemas de amarre profesionales que evitan daños en la moto durante el traslado</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl text-secondary mb-3">Servicio 24/7</h3>
+            <p class="text-gray-600">Disponibles las 24 horas para trasladar tu moto cuando lo necesites</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl text-secondary mb-3">Personal Capacitado</h3>
+            <p class="text-gray-600">Equipo experimentado en el manejo y traslado de todo tipo de motocicletas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section .bg-gradient-to-r from-primary to-orange-600 text-white">
+      <div class="container-custom text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          ¿Necesitás trasladar tu moto?
+        </h2>
+        <p class="text-xl mb-8 text-orange-100">
+          Contactanos ahora para coordinar el traslado de tu motocicleta
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito trasladar mi moto")}`} class="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition text-lg">
+            WhatsApp: {SITE_CONFIG.contact.phoneDisplay}
+          </a>
+          <a href="tel:+542995837777" class="bg-secondary text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition text-lg">
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

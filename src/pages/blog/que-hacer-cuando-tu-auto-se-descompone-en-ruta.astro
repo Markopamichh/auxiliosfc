@@ -1,0 +1,182 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp.astro";
+import { SITE_CONFIG } from "@/config/site";
+import { BLOG_POSTS } from "@/config/blog-posts";
+
+const post = BLOG_POSTS.find(p => p.slug === "que-hacer-cuando-tu-auto-se-descompone-en-ruta");
+---
+
+<BaseLayout
+  title={post?.title}
+  description={post?.description}
+  image={post?.image}
+>
+  <Header />
+
+  <main>
+    <article class="py-16 bg-white">
+      <div class="container-custom max-w-4xl">
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-gray-600">
+          <a href="/" class="hover:text-primary">Inicio</a>
+          <span class="mx-2">/</span>
+          <a href="/blog" class="hover:text-primary">Blog</a>
+          <span class="mx-2">/</span>
+          <span class="text-secondary">{post?.title}</span>
+        </nav>
+
+        <!-- Article Header -->
+        <header class="mb-8">
+          <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">
+            {post?.title}
+          </h1>
+          <div class="flex items-center gap-4 text-gray-600 mb-6">
+            <time datetime={post?.date}>{new Date(post?.date || "").toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            <span>•</span>
+            <span>{post?.category}</span>
+          </div>
+          <img src={post?.image} alt={post?.title} class="w-full h-96 object-cover rounded-lg shadow-lg mb-8" />
+        </header>
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none">
+          <p class="text-xl text-gray-700 mb-6 font-semibold">
+            Quedarse varado en la ruta con el auto descompuesto es una situación estresante que puede pasarle a cualquiera. En esta guía completa te explicamos qué hacer paso a paso para mantenerte seguro y resolver el problema rápidamente en Neuquén.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">1. Mantén la Calma y Prioriza la Seguridad</h2>
+          <p class="text-gray-700 mb-4">
+            Lo primero y más importante es mantener la calma. Un vehículo descompuesto en la ruta puede ser peligroso, especialmente en rutas con mucho tráfico o durante la noche. Tu seguridad y la de tus acompañantes es lo más importante.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">Acciones inmediatas de seguridad:</h3>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Enciende las luces de emergencia (balizas) inmediatamente</li>
+            <li>Si es posible, mueve el vehículo fuera de la calzada hacia la banquina</li>
+            <li>Coloca el triángulo de seguridad a 50-100 metros detrás del vehículo</li>
+            <li>Si es de noche o hay poca visibilidad, usa el chaleco reflectivo</li>
+            <li>Mantén a todos los pasajeros dentro del vehículo si es seguro, o fuera del camino si no lo es</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">2. Evalúa la Situación</h2>
+          <p class="text-gray-700 mb-4">
+            Una vez que estés seguro, intenta determinar qué le sucede al vehículo. Algunos problemas comunes en ruta incluyen:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li><strong>Neumático pinchado:</strong> El problema más común y generalmente solucionable</li>
+            <li><strong>Batería descargada:</strong> El motor no arranca o hay problemas eléctricos</li>
+            <li><strong>Sobrecalentamiento:</strong> Humo del capó o temperatura alta en el tablero</li>
+            <li><strong>Falta de combustible:</strong> El motor se apaga gradualmente</li>
+            <li><strong>Problemas mecánicos:</strong> Ruidos extraños, pérdida de potencia o aceite</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">3. Solicita Ayuda Profesional</h2>
+          <p class="text-gray-700 mb-4">
+            A menos que el problema sea muy simple (como un neumático pinchado que puedas cambiar tú mismo de forma segura), lo mejor es solicitar auxilio mecánico profesional. En Neuquén, contar con un servicio de auxilio 24 horas es fundamental, especialmente en rutas provinciales.
+          </p>
+
+          <div class="bg-orange-50 border-l-4 border-primary p-6 my-8">
+            <h3 class="text-xl font-bold text-secondary mb-3">Auxilio Mecánico en Neuquén - Disponible 24/7</h3>
+            <p class="text-gray-700 mb-4">
+              En <strong>Auxilios FC</strong> estamos disponibles las 24 horas para asistirte en cualquier emergencia vehicular en Neuquén y toda la provincia.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito auxilio mecánico urgente")}`} class="btn-primary text-center">
+                Solicitar Auxilio Ahora
+              </a>
+              <a href="tel:+542995837777" class="btn-secondary text-center">
+                Llamar: 0299-5837777
+              </a>
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">4. Mientras Esperas la Asistencia</h2>
+          <p class="text-gray-700 mb-4">
+            Mientras llega el auxilio mecánico, sigue estas recomendaciones:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Mantente dentro del vehículo con las puertas cerradas si es seguro</li>
+            <li>No aceptes ayuda de desconocidos (espera al servicio profesional)</li>
+            <li>Ten los documentos del vehículo listos</li>
+            <li>Comunica tu ubicación exacta (usa referencias o GPS)</li>
+            <li>Si hace mucho frío o calor, considera tu bienestar y el de los pasajeros</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">5. Prevención para el Futuro</h2>
+          <p class="text-gray-700 mb-4">
+            Para evitar quedarte varado nuevamente, considera estos consejos de mantenimiento preventivo:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Realiza el service de tu vehículo según el kilometraje recomendado</li>
+            <li>Revisa el estado de los neumáticos regularmente</li>
+            <li>Verifica niveles de aceite, agua y líquido de frenos</li>
+            <li>Mantén la batería en buen estado</li>
+            <li>Lleva siempre un kit de emergencia en el vehículo</li>
+            <li>Guarda el número de un servicio de auxilio confiable</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Kit de Emergencia Básico</h2>
+          <p class="text-gray-700 mb-4">
+            Todo vehículo debería tener un kit de emergencia que incluya:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Triángulos de señalización</li>
+            <li>Chaleco reflectivo</li>
+            <li>Linterna con pilas de repuesto</li>
+            <li>Cables de batería</li>
+            <li>Rueda de auxilio inflada y herramientas para cambiarla</li>
+            <li>Botiquín de primeros auxilios</li>
+            <li>Agua y snacks no perecederos</li>
+            <li>Manta térmica</li>
+            <li>Cargador de celular para el auto</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Servicios de Auxilio en Neuquén</h2>
+          <p class="text-gray-700 mb-4">
+            En Auxilios FC ofrecemos cobertura en toda la provincia de Neuquén, incluyendo rutas nacionales y provinciales. Nuestros servicios incluyen:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Auxilio mecánico en ruta</li>
+            <li>Servicio de grúa para traslado a taller</li>
+            <li>Cambio de neumáticos</li>
+            <li>Puente de batería</li>
+            <li>Provisión de combustible</li>
+            <li>Apertura de vehículos</li>
+          </ul>
+
+          <div class="bg-gray-50 p-8 rounded-lg my-8">
+            <h3 class="text-2xl font-bold text-secondary mb-4">Conclusión</h3>
+            <p class="text-gray-700">
+              Quedarse con el auto descompuesto en la ruta no tiene por qué ser una experiencia traumática si sabes qué hacer. Lo más importante es mantener la calma, priorizar la seguridad y contar con un servicio de auxilio mecánico confiable. En Neuquén, Auxilios FC está disponible las 24 horas para ayudarte en cualquier emergencia vehicular.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="mt-12 bg-gradient-to-r from-primary to-orange-600 text-white p-8 rounded-lg text-center">
+          <h3 class="text-2xl font-bold mb-4">¿Necesitás auxilio mecánico ahora?</h3>
+          <p class="text-lg mb-6">Estamos disponibles 24/7 en toda la provincia de Neuquén</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito auxilio mecánico")}`} class="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
+              WhatsApp: {SITE_CONFIG.contact.phoneDisplay}
+            </a>
+            <a href="tel:+542995837777" class="bg-secondary text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition">
+              Llamar Ahora
+            </a>
+          </div>
+        </div>
+
+        <!-- Back to Blog -->
+        <div class="mt-12 text-center">
+          <a href="/blog" class="text-primary hover:underline text-lg">← Volver al Blog</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

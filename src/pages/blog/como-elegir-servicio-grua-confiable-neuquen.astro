@@ -1,0 +1,219 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp.astro";
+import { SITE_CONFIG } from "@/config/site";
+import { BLOG_POSTS } from "@/config/blog-posts";
+
+const post = BLOG_POSTS.find(p => p.slug === "como-elegir-servicio-grua-confiable-neuquen");
+---
+
+<BaseLayout
+  title={post?.title}
+  description={post?.description}
+  image={post?.image}
+>
+  <Header />
+
+  <main>
+    <article class="py-16 bg-white">
+      <div class="container-custom max-w-4xl">
+        <nav class="mb-8 text-sm text-gray-600">
+          <a href="/" class="hover:text-primary">Inicio</a>
+          <span class="mx-2">/</span>
+          <a href="/blog" class="hover:text-primary">Blog</a>
+          <span class="mx-2">/</span>
+          <span class="text-secondary">{post?.title}</span>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">
+            {post?.title}
+          </h1>
+          <div class="flex items-center gap-4 text-gray-600 mb-6">
+            <time datetime={post?.date}>{new Date(post?.date || "").toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            <span>•</span>
+            <span>{post?.category}</span>
+          </div>
+          <img src={post?.image} alt={post?.title} class="w-full h-96 object-cover rounded-lg shadow-lg mb-8" />
+        </header>
+
+        <div class="prose prose-lg max-w-none">
+          <p class="text-xl text-gray-700 mb-6 font-semibold">
+            Elegir un servicio de grúa confiable en Neuquén es fundamental para garantizar la seguridad de tu vehículo y recibir atención profesional en momentos de emergencia. En esta guía te mostramos los factores clave que debes considerar.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">¿Por qué es importante elegir bien?</h2>
+          <p class="text-gray-700 mb-4">
+            Un servicio de grúa de calidad no solo traslada tu vehículo de un punto A a un punto B. Un buen servicio de grúa debe garantizar que tu auto llegue sin daños adicionales, ofrecer atención rápida y profesional, y estar disponible cuando más lo necesites.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Un servicio inadecuado puede resultar en daños a tu vehículo, tiempos de espera prolongados, cobros excesivos o incluso problemas con tu seguro. Por eso es fundamental saber qué buscar.
+          </p>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">1. Disponibilidad 24/7</h2>
+          <p class="text-gray-700 mb-4">
+            Las emergencias vehiculares no respetan horarios. Un vehículo puede descomponerse a cualquier hora del día o de la noche, especialmente en rutas donde el tráfico es constante.
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Verifica que el servicio esté disponible las 24 horas, los 7 días de la semana</li>
+            <li>Confirma que atienden días feriados y fines de semana</li>
+            <li>Pregunta sobre los tiempos de respuesta típicos en diferentes horarios</li>
+            <li>Asegúrate de que tengan cobertura en toda la provincia</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">2. Equipamiento Adecuado</h2>
+          <p class="text-gray-700 mb-4">
+            No todas las grúas son iguales. El equipamiento debe ser apropiado para el tipo de vehículo que necesitas trasladar.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">Tipos de grúas:</h3>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li><strong>Grúa plataforma:</strong> Ideal para vehículos de transmisión automática o 4x4</li>
+            <li><strong>Grúa de arrastre:</strong> Para vehículos más ligeros y transmisión manual</li>
+            <li><strong>Grúa pesada:</strong> Para camiones, camionetas grandes y maquinaria</li>
+          </ul>
+
+          <div class="bg-orange-50 border-l-4 border-primary p-6 my-8">
+            <h3 class="text-xl font-bold text-secondary mb-3">Equipamiento Profesional</h3>
+            <p class="text-gray-700 mb-4">
+              En <strong>Auxilios FC</strong> contamos con grúas de última generación equipadas para trasladar todo tipo de vehículos de forma segura, desde motos hasta camiones y maquinaria pesada.
+            </p>
+            <a href="/#servicios" class="text-primary hover:underline font-semibold">Ver nuestros servicios →</a>
+          </div>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">3. Experiencia y Reputación</h2>
+          <p class="text-gray-700 mb-4">
+            La experiencia es fundamental en el servicio de grúas. Un operador experimentado sabe cómo manejar diferentes situaciones y tipos de vehículos sin causar daños.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">Cómo evaluar la experiencia:</h3>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Busca empresas con años de trayectoria en la zona</li>
+            <li>Lee reseñas y testimonios de clientes anteriores</li>
+            <li>Pregunta sobre la capacitación del personal</li>
+            <li>Verifica si trabajan con aseguradoras reconocidas</li>
+            <li>Consulta referencias de talleres mecánicos locales</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">4. Transparencia en Precios</h2>
+          <p class="text-gray-700 mb-4">
+            Un servicio confiable debe ser transparente con sus tarifas. Desconfía de empresas que no dan presupuestos claros o que tienen cargos ocultos.
+          </p>
+
+          <h3 class="text-2xl font-bold text-secondary mt-8 mb-4">Qué preguntar:</h3>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>¿Cuál es la tarifa base del servicio?</li>
+            <li>¿Cómo se calcula el costo por kilómetro?</li>
+            <li>¿Hay cargos adicionales (nocturnos, feriados, fines de semana)?</li>
+            <li>¿Qué formas de pago aceptan?</li>
+            <li>¿Emiten factura para reembolso de seguros?</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">5. Cobertura Geográfica</h2>
+          <p class="text-gray-700 mb-4">
+            En Neuquén, con sus vastas distancias y variedad de terrenos, es crucial que el servicio de grúa tenga amplia cobertura provincial.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Verifica que el servicio cubra:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Zonas urbanas (Neuquén Capital, Plottier, Centenario)</li>
+            <li>Rutas nacionales y provinciales</li>
+            <li>Localidades del interior (Cutral-Có, Zapala, San Martín de los Andes)</li>
+            <li>Zonas cordilleranas y rurales</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">6. Tiempo de Respuesta</h2>
+          <p class="text-gray-700 mb-4">
+            En una emergencia, cada minuto cuenta. Un buen servicio de grúa debe tener tiempos de respuesta rápidos, especialmente en zonas urbanas.
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Pregunta cuánto tardan en llegar en promedio</li>
+            <li>Verifica si tienen unidades estratégicamente ubicadas</li>
+            <li>Consulta si ofrecen seguimiento en tiempo real</li>
+            <li>Asegúrate de que respondan llamados rápidamente</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">7. Servicios Adicionales</h2>
+          <p class="text-gray-700 mb-4">
+            Un servicio integral no solo ofrece grúa, sino también auxilio mecánico completo:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Puente de batería</li>
+            <li>Cambio de neumáticos en ruta</li>
+            <li>Provisión de combustible</li>
+            <li>Apertura de vehículos</li>
+            <li>Diagnóstico mecánico básico</li>
+            <li>Traslado de motos y maquinaria</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">8. Atención al Cliente</h2>
+          <p class="text-gray-700 mb-4">
+            La calidad del servicio al cliente es un indicador importante de profesionalismo:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>¿Responden llamadas y mensajes rápidamente?</li>
+            <li>¿Son amables y profesionales al comunicarse?</li>
+            <li>¿Explican claramente los procedimientos?</li>
+            <li>¿Mantienen informado al cliente durante el servicio?</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">9. Trabajo con Seguros</h2>
+          <p class="text-gray-700 mb-4">
+            Si tu vehículo tiene seguro con cobertura de auxilio mecánico, es importante que el servicio de grúa pueda facturar adecuadamente para que puedas obtener el reembolso.
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Verifica que emitan facturas tipo A o B</li>
+            <li>Consulta si tienen experiencia trabajando con aseguradoras</li>
+            <li>Pregunta qué documentación proporcionan para el reclamo</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-secondary mt-12 mb-6">Señales de Alerta</h2>
+          <p class="text-gray-700 mb-4">
+            Evita servicios que:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>No tienen números de contacto verificables</li>
+            <li>No proporcionan presupuestos por adelantado</li>
+            <li>Tienen equipos en mal estado o vehículos sin mantenimiento</li>
+            <li>No cuentan con habilitaciones municipales</li>
+            <li>Tienen reseñas mayoritariamente negativas</li>
+            <li>Exigen pagos en efectivo sin recibos</li>
+          </ul>
+
+          <div class="bg-gray-50 p-8 rounded-lg my-8">
+            <h3 class="text-2xl font-bold text-secondary mb-4">Conclusión</h3>
+            <p class="text-gray-700 mb-4">
+              Elegir un servicio de grúa confiable en Neuquén requiere investigación y criterio. Los factores más importantes son la disponibilidad 24/7, equipamiento adecuado, experiencia comprobable, transparencia en precios y amplia cobertura geográfica.
+            </p>
+            <p class="text-gray-700">
+              En Auxilios FC cumplimos con todos estos requisitos y contamos con más de 10 años de experiencia brindando servicios de grúa y auxilio mecánico en toda la provincia de Neuquén. Trabajamos con todas las aseguradoras y estamos disponibles las 24 horas para atender tu emergencia.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-gradient-to-r from-primary to-orange-600 text-white p-8 rounded-lg text-center">
+          <h3 class="text-2xl font-bold mb-4">Servicio de Grúa Confiable en Neuquén</h3>
+          <p class="text-lg mb-6">Más de 10 años de experiencia - Atención 24/7 - Cobertura provincial</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Necesito servicio de grúa")}`} class="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
+              WhatsApp: {SITE_CONFIG.contact.phoneDisplay}
+            </a>
+            <a href="tel:+542995837777" class="bg-secondary text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition">
+              Llamar Ahora
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="/blog" class="text-primary hover:underline text-lg">← Volver al Blog</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

@@ -1,10 +1,13 @@
 ---
 import { SITE_CONFIG } from "@/config/site";
+import { BLOG_POSTS } from "@/config/blog-posts";
+
+const recentPosts = BLOG_POSTS.slice(0, 3);
 ---
 
 <footer class="bg-secondary text-black">
   <div class="container-custom py-16">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
       <!-- Column 1: About & Logo -->
       <div>
         <div class="flex items-center gap-3 mb-4">
@@ -82,11 +85,28 @@ import { SITE_CONFIG } from "@/config/site";
         </div>
       </div>
 
-      <!-- Column 3: Links & Coverage -->
+      <!-- Column 3: Blog -->
+      <div>
+        <h3 class="text-xl font-display font-bold mb-4">Blog</h3>
+        <ul class="text-black space-y-3">
+          {recentPosts.map(post => (
+            <li>
+              <a href={`/blog/${post.slug}`} class="hover:text-primary transition-colors line-clamp-2">
+                {post.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a href="/blog" class="inline-block mt-4 text-primary hover:underline font-semibold">
+          Ver todos los artículos →
+        </a>
+      </div>
+
+      <!-- Column 4: Coverage & Social -->
       <div>
         <h3 class="text-xl font-display font-bold mb-4">Zona de Cobertura</h3>
         <ul class="text-black space-y-2 mb-6">
-          {SITE_CONFIG.business.coverageAreas.slice(0, 6).map(area => (
+          {SITE_CONFIG.business.coverageAreas.slice(0, 5).map(area => (
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
