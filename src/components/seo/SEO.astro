@@ -13,7 +13,7 @@ const {
   title = SITE_CONFIG.title,
   description = SITE_CONFIG.description,
   image = `${SITE_CONFIG.url}/images/fiveicon.png`,
-  canonicalURL = SITE_CONFIG.url,
+  canonicalURL = new URL(Astro.url.pathname, SITE_CONFIG.url).href,
   type = "website",
 } = Astro.props;
 

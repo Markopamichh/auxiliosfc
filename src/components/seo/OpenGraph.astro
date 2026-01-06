@@ -14,7 +14,7 @@ const {
   description = SITE_CONFIG.description,
   image = `${SITE_CONFIG.url}/images/fiveicon.png`,
   type = "website",
-  url = SITE_CONFIG.url,
+  url = new URL(Astro.url.pathname, SITE_CONFIG.url).href,
 } = Astro.props;
 
 // Forzar el mismo título para OpenGraph
