@@ -37,7 +37,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Claudia Martínez",
     location: "Cutral-Có",
     rating: 5,
-    text: "Necesitaba trasladar mi moto desde Cutral-Có a Neuquén. El traslado fue perfecto, llegó sin un rasguño. Muy cuidadosos y el precio fue justo.",
+    text: "Necesitaba trasladar mi moto desde Cutral-Có a Neuquén. El traslado fue perfecto, llegó sin ningun rayon. Muy cuidadosos y el precio fue justo.",
     date: "2024-09-20",
   },
   {

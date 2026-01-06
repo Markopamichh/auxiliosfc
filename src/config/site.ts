@@ -9,8 +9,6 @@ export const SITE_CONFIG = {
   contact: {
     phone: "+542995837777",
     phoneDisplay: "0299-5837777",
-    phone2: "+542994234000",
-    phone2Display: "0299-4234000",
     whatsapp: "5492995837777",
     whatsappMessage: "Hola, necesito auxilio mecánico urgente",
     email: "AuxiliosFc77@hotmail.com",
